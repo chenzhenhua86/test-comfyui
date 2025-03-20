@@ -40,6 +40,19 @@ resources:
 
       environmentVariables:
         EXTRA_ARGS: --disable-cuda-malloc
+        USE_AGENT: 'true'
+
+      triggers:
+        - triggerConfig:
+            methods:
+              - GET
+              - POST
+            authType: anonymous
+            disableURLInternet: false
+          triggerName: defaultTrigger
+          description: ''
+          qualifier: LATEST
+          triggerType: http
 
   custom-domain:
     component: fc3-domain
